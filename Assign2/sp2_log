@@ -1,0 +1,55 @@
+saket910@ubuntu:~$ gcc sp_ass2.c
+sp_ass2.c: In function ‘main’:
+sp_ass2.c:73:9: warning: implicit declaration of function ‘isalnum’ [-Wimplicit-function-declaration]
+   73 |     if(!isalnum(nextline[i]))
+      |         ^~~~~~~
+sp_ass2.c:76:18: warning: implicit declaration of function ‘toupper’ [-Wimplicit-function-declaration]
+   76 |      nextline[i]=toupper(nextline[i]);
+      |                  ^~~~~~~
+saket910@ubuntu:~$ ./a.out
+
+Enter Symbol Table Entries : 
+Enter No. entries : 6
+
+Enter the address of the symbol : 211
+
+Enter the address of the symbol : 202
+
+Enter the address of the symbol : 213
+
+Enter the address of the symbol : 208
+
+Enter the address of the symbol : 202
+
+Enter the address of the symbol : 210
+
+Enter Literal Table Entries : 
+Enter No. entries : 3
+
+Enter the address of the literal : 206
+
+Enter the address of the literal : 207
+
+Enter the address of the literal : 214
+
+enter Source file name(containing Intermediate Code):interCode.txt
+
+200)  04 01 206
+201)  05 01 211
+202)  04 01 211
+203)  04 03 213
+204)  01 03 207
+205)  07 07 208
+206)  00 00   5
+207)  00 00   1
+208)  02 01 214
+209)  07 02 202
+210)  00 00 000
+211)  
+212)  03 03 213
+213)  
+214)  
+215)  
+216)  
+217)  00 00   
+

@@ -1,0 +1,75 @@
+saket910@ubuntu:~$ gcc sp_ass1.c
+saket910@ubuntu:~$ ./a.out
+
+
+Input file being interpreted...
+
+
+--SYMBOL TABLE--
+
+A	501
+LOOP	202
+B	503
+NEXT1	504
+	202
+
+
+--LITERAL TABLE--
+
+='5'	205
+='1'	206
+='1'	504
+
+
+saket910@ubuntu:~$ gcc sp_ass1.c
+sp_ass1.c: In function ‘main’:
+sp_ass1.c:103:9: warning: implicit declaration of function ‘gets’; did you mean ‘fgets’? [-Wimplicit-function-declaration]
+  103 |         gets(file1);
+      |         ^~~~
+      |         fgets
+sp_ass1.c:113:9: warning: implicit declaration of function ‘isalnum’ [-Wimplicit-function-declaration]
+  113 |     if(!isalnum(nextline[i]))
+      |         ^~~~~~~
+sp_ass1.c:117:18: warning: implicit declaration of function ‘toupper’ [-Wimplicit-function-declaration]
+  117 |      nextline[i]=toupper(nextline[i]);
+      |                  ^~~~~~~
+/usr/bin/ld: /tmp/cc2x7Grn.o: in function `main':
+sp_ass1.c:(.text+0x189): warning: the `gets' function is dangerous and should not be used.
+saket910@ubuntu:~$ ./a.out
+
+Enter Source file name:input.txt
+
+--------------SYMBOL TABLE--------------
+
+      LOOP  202  
+     NEXT1  202  
+         A    2  
+         B    4  
+------------OPCODE TABLE------------
+  STOP   00
+   ADD   01
+   SUB   02
+  MULT   03
+ MOVER   04
+ MOVEM   05
+  COMP   06
+    BC   07
+   DIV   08
+  READ   09
+ PRINT   10
+
+Intermediate Code :
+  0)   (AD,01)  (C,200)
+200)   (IS,04) (RG,01)
+201)   (IS,05) (RG,01)
+202)   (IS,04) (RG,01)
+203)   (IS,04) (RG,03)
+204)   (IS,01) (RG,03)
+205)   (IS,02) (RG,01)
+206)   (AD,03)
+  1)   (IS,03) (RG,03)
+  2)   (DL,01)  (C, 2)
+  4)   (DL,02)  (C, 3)
+  5)   (AD,04)  (S, 0)saket910@ubuntu:~$ ^C
+saket910@ubuntu:~$ 
+

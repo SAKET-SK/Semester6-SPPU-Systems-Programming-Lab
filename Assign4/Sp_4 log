@@ -1,0 +1,105 @@
+saket910@ubuntu:~$ gcc sp_04.c
+sp_04.c: In function ‘check’:
+sp_04.c:215:39: warning: format ‘%c’ expects argument of type ‘int’, but argument 2 has type ‘char *’ [-Wformat=]
+  215 |      printf("\t Invalid token !!! -> %c",c);
+      |                                      ~^  ~
+      |                                       |  |
+      |                                       |  char *
+      |                                       int
+      |                                      %s
+saket910@ubuntu:~$ ./a.out
+Enter The Source File Name: input4.txt
+
+
+	SOURCE PROGRAM
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+   int x,y;
+   x=(5 * x / 67);
+}
+�
+TERMINAL TABLE
+
+	INDEX   	SYMBOL		SYMBOL_TYPE
+
+	  0  		 #		SPECIAL CHARACTER
+	  1  		 include		KEYWORD
+	  2  		 <		OPERATOR
+	  3  		 stdio		KEYWORD
+	  4  		 .		SPECIAL CHARACTER
+	  5  		 >		OPERATOR
+	  6  		 conio		KEYWORD
+	  7  		 void		KEYWORD
+	  8  		 main		KEYWORD
+	  9  		 (		SPECIAL CHARACTER
+	  10  		 )		SPECIAL CHARACTER
+	  11  		 {		SPECIAL CHARACTER
+	  12  		 int		KEYWORD
+	  13  		 ,		SPECIAL CHARACTER
+	  14  		 ;		SPECIAL CHARACTER
+	  15  		 =		OPERATOR
+	  16  		 *		OPERATOR
+	  17  		 /		OPERATOR
+	  18  		 }		SPECIAL CHARACTER
+
+IDENTIFIER TABLE
+
+	INDEX	IDENTIFIER
+
+	  0	   h
+	  1	   x
+	  2	   y
+
+LITERAL TABLE
+
+	INDEX	CONSTANTS
+
+	  0	   5
+	  1	   67
+
+UNIVERSAL SYMBOL TABLE
+
+	SYMBOL		SYMBOL TYPE	COMMENT			INDEX
+
+	#		TERMINAL	SPECIAL CHARACTER	  0
+	include		TERMINAL	KEYWORD			  1
+	<		TERMINAL	OPERATOR		  2
+	stdio		TERMINAL	KEYWORD			  3
+	.		TERMINAL	SPECIAL CHARACTER	  4
+	h		IDENTIFIER				  0
+	>		TERMINAL	OPERATOR		  5
+	#		TERMINAL	SPECIAL CHARACTER	  0
+	include		TERMINAL	KEYWORD			  1
+	<		TERMINAL	OPERATOR		  2
+	conio		TERMINAL	KEYWORD			  6
+	.		TERMINAL	SPECIAL CHARACTER	  4
+	h		IDENTIFIER				  0
+	>		TERMINAL	OPERATOR		  5
+	void		TERMINAL	KEYWORD			  7
+	main		TERMINAL	KEYWORD			  8
+	(		TERMINAL	SPECIAL CHARACTER	  9
+	)		TERMINAL	SPECIAL CHARACTER	  10
+	{		TERMINAL	SPECIAL CHARACTER	  11
+	int		TERMINAL	KEYWORD			  12
+	x		IDENTIFIER				  1
+	,		TERMINAL	SPECIAL CHARACTER	  13
+	y		IDENTIFIER				  2
+	;		TERMINAL	SPECIAL CHARACTER	  14
+	x		IDENTIFIER				  1
+	=		TERMINAL	OPERATOR		  15
+	(		TERMINAL	SPECIAL CHARACTER	  9
+	5		LITERAL					  0
+	*		TERMINAL	OPERATOR		  16
+	x		IDENTIFIER				  1
+	/		TERMINAL	OPERATOR		  17
+	67		LITERAL					  1
+	)		TERMINAL	SPECIAL CHARACTER	  10
+	;		TERMINAL	SPECIAL CHARACTER	  14
+	}		TERMINAL	SPECIAL CHARACTER	  18
+	}		TERMINAL	SPECIAL CHARACTER	  18
+saket910@ubuntu:~$ 
+

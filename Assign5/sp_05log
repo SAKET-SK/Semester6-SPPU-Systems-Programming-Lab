@@ -1,0 +1,41 @@
+saket910@ubuntu:~$ gcc sp_05.c
+sp_05.c: In function ‘main’:
+sp_05.c:135:4: warning: implicit declaration of function ‘gets’; did you mean ‘fgets’? [-Wimplicit-function-declaration]
+  135 |    gets(buffer);
+      |    ^~~~
+      |    fgets
+/usr/bin/ld: /tmp/ccoyJwGO.o: in function `main':
+sp_05.c:(.text+0x3f6): warning: the `gets' function is dangerous and should not be used.
+saket910@ubuntu:~$ ./a.out
+
+Enter input string:x=(a+b)*a      
+
+The Production S => A=E  is used
+......Match the terminal x
+......Match the terminal =
+The Production E => T E1 is used
+The Production T => F T1 is used
+The production  F => (E) is used
+......Match the terminal (
+The Production E => T E1 is used
+The Production T => F T1 is used
+The production  F => a is used
+......Match the terminal a
+The production T1 => <Epsilon> is used
+The production  E1 => +T E1 is used
+......Match the terminal +
+The Production T => F T1 is used
+The production  F => b is used
+......Match the terminal b
+The production T1 => <Epsilon> is used
+The production E1 => <Epsilon> is used
+.....Match the terminal )
+The production  T1 => *F T1 is used
+......Match the terminal *
+The production  F => a is used
+......Match the terminal a
+The production T1 => <Epsilon> is used
+The production E1 => <Epsilon> is used
+It is a valid stringsaket910@ubuntu:~$ ^C
+saket910@ubuntu:~$ 
+

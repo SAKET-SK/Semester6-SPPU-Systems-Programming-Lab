@@ -1,0 +1,77 @@
+saket910@ubuntu:~$ lex while.l
+saket910@ubuntu:~$ yacc -d while.y
+saket910@ubuntu:~$ gcc y.tab.c -ll
+y.tab.c: In function ‘yyparse’:
+y.tab.c:1237:16: warning: implicit declaration of function ‘yylex’ [-Wimplicit-function-declaration]
+ 1237 |       yychar = yylex ();
+      |                ^~~~~
+while.y:8:11: warning: implicit declaration of function ‘lab1’ [-Wimplicit-function-declaration]
+    8 | S : WHILE{lab1();} '(' E ')'{lab2();} E ';'{lab3();}
+      |           ^~~~
+while.y:8:30: warning: implicit declaration of function ‘lab2’ [-Wimplicit-function-declaration]
+    8 | S : WHILE{lab1();} '(' E ')'{lab2();} E ';'{lab3();}
+      |                              ^~~~
+while.y:8:45: warning: implicit declaration of function ‘lab3’ [-Wimplicit-function-declaration]
+    8 | S : WHILE{lab1();} '(' E ')'{lab2();} E ';'{lab3();}
+      |                                             ^~~~
+while.y:10:10: warning: implicit declaration of function ‘push’ [-Wimplicit-function-declaration]
+   10 | E :V '='{push();} E{codegen_assign();}
+      |          ^~~~
+while.y:10:21: warning: implicit declaration of function ‘codegen_assign’ [-Wimplicit-function-declaration]
+   10 | E :V '='{push();} E{codegen_assign();}
+      |                     ^~~~~~~~~~~~~~
+while.y:11:22: warning: implicit declaration of function ‘codegen’ [-Wimplicit-function-declaration]
+   11 |   | E '+'{push();} E{codegen();}
+      |                      ^~~~~~~
+while.y:16:20: warning: implicit declaration of function ‘codegen_umin’ [-Wimplicit-function-declaration]
+   16 |   | '-'{push();} E{codegen_umin();} %prec UMINUS
+      |                    ^~~~~~~~~~~~
+y.tab.c:1466:7: warning: implicit declaration of function ‘yyerror’; did you mean ‘yyerrok’? [-Wimplicit-function-declaration]
+ 1466 |       yyerror (YY_("syntax error"));
+      |       ^~~~~~~
+      |       yyerrok
+while.y: At top level:
+while.y:32:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   32 | main()
+      | ^~~~
+while.y:38:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   38 | push()
+      | ^~~~
+while.y:43:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   43 | codegen()
+      | ^~~~~~~
+while.y:53:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   53 | codegen_umin()
+      | ^~~~~~~~~~~~
+while.y:63:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   63 | codegen_assign()
+      | ^~~~~~~~~~~~~~
+while.y:69:2: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   69 |  lab1()
+      |  ^~~~
+while.y:74:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   74 | lab2()
+      | ^~~~
+while.y:83:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+   83 | lab3()
+      | ^~~~
+while.y:89:6: warning: conflicting types for ‘yyerror’
+   89 | void yyerror (char const *s) {
+      |      ^~~~~~~
+y.tab.c:1466:7: note: previous implicit declaration of ‘yyerror’ was here
+ 1466 |       yyerror (YY_("syntax error"));
+      |       ^~~~~~~
+saket910@ubuntu:~$ ./a.out
+Enter the expression : while(k=c/s)k=k*c+d;
+L1: 
+t0 = c / s
+k = t0
+t1 = not k
+if t1 gotoL0
+t2 = k * c
+t3 = t2 + d
+k = t3
+gotoL1 
+L0: 
+saket910@ubuntu:~$ 
+
